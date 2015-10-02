@@ -1,16 +1,15 @@
 package ua.org.lotrik.dz_10;
 
+import android.app.Activity;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import java.util.ArrayList;
 
-import java.util.Random;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     public int[] pressed = {0,0,0,0,0,0,0,0,0};
     public ImageView imageView;
@@ -23,15 +22,16 @@ public class MainActivity extends AppCompatActivity {
     public ImageView imageView8;
     public ImageView imageView9;
     public TextView textView;
-    Random random = new Random();
-    int i;
-    int empty=9;
+    public ArrayList<String> empty = new ArrayList<>();
     public Button newGame;
+    NewGameExec newGameExec = new NewGameExec(this);
+    HumanMove humanMove = new HumanMove(this);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         imageView = (ImageView)findViewById(R.id.imageView);
         imageView2 = (ImageView)findViewById(R.id.imageView2);
         imageView3 = (ImageView)findViewById(R.id.imageView3);
@@ -53,109 +53,28 @@ public class MainActivity extends AppCompatActivity {
         imageView8.setBackgroundColor(Color.WHITE);
         imageView9.setBackgroundColor(Color.WHITE);
 
+        empty.add("0");
+        empty.add("1");
+        empty.add("2");
+        empty.add("3");
+        empty.add("4");
+        empty.add("5");
+        empty.add("6");
+        empty.add("7");
+        empty.add("8");
+
 
         final View.OnClickListener click = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.imageView:
-                        if (pressed[0] == 0) {
-                            imageView.setBackgroundResource(R.drawable.x);
-                            pressed[0]=1;
-                            empty--;
-                            textView.setText(new Result().result(pressed));
-                            ai();
-                        }
-                        break;
-                    case R.id.imageView2:
-                        if (pressed[1] == 0) {
-                            imageView2.setBackgroundResource(R.drawable.x);
-                            pressed[1]=1;
-                            empty--;
-                            textView.setText(new Result().result(pressed));
-                            ai();
-                        }
-                        break;
-                    case R.id.imageView3:
-                        if (pressed[2] == 0) {
-                            imageView3.setBackgroundResource(R.drawable.x);
-                            pressed[2]=1;
-                            empty--;
-                            textView.setText(new Result().result(pressed));
-                            ai();
-                        }
-                        break;
-                    case R.id.imageView4:
-                        if (pressed[3] == 0) {
-                            imageView4.setBackgroundResource(R.drawable.x);
-                            pressed[3]=1;
-                            empty--;
-                            textView.setText(new Result().result(pressed));
-                            ai();
-                        }
-                        break;
-                    case R.id.imageView5:
-                        if (pressed[4] == 0) {
-                            imageView5.setBackgroundResource(R.drawable.x);
-                            pressed[4]=1;
-                            empty--;
-                            textView.setText(new Result().result(pressed));
-                            ai();
-                        }
-                        break;
-                    case R.id.imageView6:
-                        if (pressed[5] == 0) {
-                            imageView6.setBackgroundResource(R.drawable.x);
-                            pressed[5]=1;
-                            empty--;
-                            textView.setText(new Result().result(pressed));
-                            ai();
-                        }
-                        break;
-                    case R.id.imageView7:
-                        if (pressed[6] == 0) {
-                            imageView7.setBackgroundResource(R.drawable.x);
-                            pressed[6]=1;
-                            empty--;
-                            textView.setText(new Result().result(pressed));
-                            ai();
-                        }
-                        break;
-                    case R.id.imageView8:
-                        if (pressed[7] == 0) {
-                            imageView8.setBackgroundResource(R.drawable.x);
-                            pressed[7]=1;
-                            empty--;
-                            textView.setText(new Result().result(pressed));
-                            ai();
-                        }
-                        break;
-                    case R.id.imageView9:
-                        if (pressed[8] == 0) {
-                            imageView9.setBackgroundResource(R.drawable.x);
-                            pressed[8]=1;
-                            empty--;
-                            textView.setText(new Result().result(pressed));
-                            ai();
-                        }
-                        break;
+                switch (v.getId()){
                     case R.id.newGame:
-                        imageView.setBackgroundColor(Color.WHITE);
-                        imageView2.setBackgroundColor(Color.WHITE);
-                        imageView3.setBackgroundColor(Color.WHITE);
-                        imageView4.setBackgroundColor(Color.WHITE);
-                        imageView5.setBackgroundColor(Color.WHITE);
-                        imageView6.setBackgroundColor(Color.WHITE);
-                        imageView7.setBackgroundColor(Color.WHITE);
-                        imageView8.setBackgroundColor(Color.WHITE);
-                        imageView9.setBackgroundColor(Color.WHITE);
-                        textView.setText("");
-                        for (int i=0; i<pressed.length;i++)
-                        {
-                            pressed[i] = 0;
-                        }
+                        new NewGameExec(newGameExec.activity).newGame();
                         break;
+                    default:
+                        new HumanMove(humanMove.activity).move(v);
                 }
+
             }
         };
 
@@ -170,69 +89,4 @@ public class MainActivity extends AppCompatActivity {
         imageView9.setOnClickListener(click);
         newGame.setOnClickListener(click);
     }
-
-    public void ai() {
-        i = random.nextInt(8);
-        if (pressed[i] == 0) {
-            switch (i) {
-                case 0:
-                    imageView.setBackgroundResource(R.drawable.o);
-                    pressed[0] = 2;
-                    empty--;
-                    textView.setText(new Result().result(pressed));
-                    break;
-                case 1:
-                    imageView2.setBackgroundResource(R.drawable.o);
-                    pressed[1] = 2;
-                    empty--;
-                    textView.setText(new Result().result(pressed));
-                    break;
-                case 2:
-                    imageView3.setBackgroundResource(R.drawable.o);
-                    pressed[2] = 2;
-                    empty--;
-                    textView.setText(new Result().result(pressed));
-                    break;
-                case 3:
-                    imageView4.setBackgroundResource(R.drawable.o);
-                    pressed[3] = 2;
-                    empty--;
-                    textView.setText(new Result().result(pressed));
-                    break;
-                case 4:
-                    imageView5.setBackgroundResource(R.drawable.o);
-                    pressed[4] = 2;
-                    empty--;
-                    textView.setText(new Result().result(pressed));
-                    break;
-                case 5:
-                    imageView6.setBackgroundResource(R.drawable.o);
-                    pressed[5] = 2;
-                    empty--;
-                    textView.setText(new Result().result(pressed));
-                    break;
-                case 6:
-                    imageView7.setBackgroundResource(R.drawable.o);
-                    pressed[6] = 2;
-                    empty--;
-                    textView.setText(new Result().result(pressed));
-                    break;
-                case 7:
-                    imageView8.setBackgroundResource(R.drawable.o);
-                    pressed[7] = 2;
-                    empty--;
-                    textView.setText(new Result().result(pressed));
-                    break;
-                case 8:
-                    imageView9.setBackgroundResource(R.drawable.o);
-                    pressed[8] = 2;
-                    empty--;
-                    textView.setText(new Result().result(pressed));
-                    break;
-            }
-        } else if (empty != 0){
-            ai();
-        }
-    }
-
 }

@@ -147,8 +147,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView"
+            android:textSize="20dp"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
-</LinearLayout><!-- From: file:/home/lotrik/Projects/DZ_10/app/src/main/res/layout/activity_main.xml -->
+</LinearLayout><!-- From: file:/home/lotrik/Android/Projects/DZ_10/app/src/main/res/layout/activity_main.xml -->

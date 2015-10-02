@@ -2,32 +2,25 @@
 <items version="2" >
 
     <item
-        jar="/opt/android-sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/home/lotrik/Projects/DZ_10/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-8a6fb6497f38678b44fa8d3ad996aafd0332c129.jar" />
-    </item>
-    <item
-        jar="/home/lotrik/Projects/DZ_10/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jar="/home/lotrik/Android/Projects/DZ_10/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/home/lotrik/Projects/DZ_10/app/build/intermediates/pre-dexed/debug/classes-46a5620340e5a81724f2ce55c1a777d467f0817d.jar" />
+        <dex dex="/home/lotrik/Android/Projects/DZ_10/app/build/intermediates/pre-dexed/debug/classes-0d3001a14943dfadf50a01d16feed67de782205b.jar" />
     </item>
     <item
-        jar="/home/lotrik/Projects/DZ_10/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jar="/home/lotrik/Android/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/home/lotrik/Projects/DZ_10/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-e7455de02fbcb0db1060fe85c2ece8470efb33cd.jar" />
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/home/lotrik/Android/Projects/DZ_10/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-2549999b4df4c217d0280b6c68b002b85865de68.jar" />
     </item>
     <item
-        jar="/home/lotrik/Projects/DZ_10/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jar="/home/lotrik/Android/Projects/DZ_10/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/home/lotrik/Projects/DZ_10/app/build/intermediates/pre-dexed/debug/classes-dff269249123c5a5f199ed7c69f8a6a3076d5e31.jar" />
+        <dex dex="/home/lotrik/Android/Projects/DZ_10/app/build/intermediates/pre-dexed/debug/classes-aaffc3cd169fa466a27e909e6b6f02fd0ad83298.jar" />
     </item>
 
 </items>

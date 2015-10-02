@@ -1,7 +1,9 @@
 package ua.org.lotrik.dz_10;
 
 
-public class Result extends MainActivity{
+import android.app.Activity;
+
+public class Result {
     private static final String TAG = "";
 
     public String result (int [] pressed){
@@ -36,7 +38,7 @@ public class Result extends MainActivity{
             resultat =  "Выиграл О";
         }
         for (int i = 0; i < pressed.length; i++) {
-            if (pressed[i] == 0 || pressed[i] == 3) {
+            if (pressed[i] == 0 || pressed[i] == 3 || resultat.contains("Выиграл")) {
                 break;
             } else if (i == pressed.length - 1) {
                 resultat =  "Ничья";
